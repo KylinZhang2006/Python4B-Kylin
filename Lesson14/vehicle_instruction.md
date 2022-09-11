@@ -28,6 +28,11 @@ If the Car is in reverse gear, the accelerate method should cause the Car to get
 The Car’s **brake** method should always move the speed of the Car closer to zero.
 
 ### Boat class
+create a Boat class that inherits from the Vehicle class.
+It has a maximum capacity of passengers.
+It has a method to load and unload passengers.
+When the boat accelerates or brakes, it's slowed down by the weight of the passengers (use the number of passengers).
+The speed change should be moved towards 0 by an amount equal to the number of passengers, but not moved past 0.
 
 ### Submission
 Create a new file in Lesson14 folder called vehicles.py
