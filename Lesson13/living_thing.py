@@ -5,7 +5,7 @@ class LivingThing:
 
 class Animal(LivingThing):
     def __init__(self, habit, is_carnivore):
-        self.is_canivore = is_carnivore
+        self.is_carnivore = is_carnivore
         super.__init__(habit)
 
 
@@ -15,13 +15,13 @@ class Plant(LivingThing):
 
 
 class Flower(Plant):
-    def __init__(self, colour, habit):
+    def __init__(self, habit, colour):
         self.colour = colour
         super.__init__(habit)
 
 
 class Tree(Plant):
-    def __init__(self, branch_num, habit):
+    def __init__(self, habit, branch_num):
         self.branch_num = branch_num
         super.__init__(habit)
 
