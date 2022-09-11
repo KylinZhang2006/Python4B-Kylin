@@ -11,10 +11,6 @@ class LivingThing:
 
 class Animal(LivingThing):
     def __init__(self, habit, is_carnivore):
-<<<<<<< HEAD
-        self.is_carnivore = is_carnivore
-=======
->>>>>>> 1dc8b20a73eaaaa4b285df78c4f2533da78e93b4
         super.__init__(habit)
         self.is_carnivore = is_carnivore
 
@@ -29,10 +25,6 @@ class Plant(LivingThing):
 
 class Flower(Plant):
     def __init__(self, habit, colour):
-<<<<<<< HEAD
-        self.colour = colour
-=======
->>>>>>> 1dc8b20a73eaaaa4b285df78c4f2533da78e93b4
         super.__init__(habit)
         self.colour = colour
 
