@@ -2,11 +2,24 @@ class LivingThing:
     def __init__(self, habit):
         self.habit = habit
 
+    def set_habit(self, habit):
+        self.habit = habit
+
+    def get_habit(self):
+        return self.habit
+
 
 class Animal(LivingThing):
     def __init__(self, habit, is_carnivore):
+<<<<<<< HEAD
         self.is_carnivore = is_carnivore
+=======
+>>>>>>> 1dc8b20a73eaaaa4b285df78c4f2533da78e93b4
         super.__init__(habit)
+        self.is_carnivore = is_carnivore
+
+    def get_is_carnivore(self):
+        return self.is_carnivore
 
 
 class Plant(LivingThing):
@@ -16,8 +29,12 @@ class Plant(LivingThing):
 
 class Flower(Plant):
     def __init__(self, habit, colour):
+<<<<<<< HEAD
         self.colour = colour
+=======
+>>>>>>> 1dc8b20a73eaaaa4b285df78c4f2533da78e93b4
         super.__init__(habit)
+        self.colour = colour
 
 
 class Tree(Plant):
