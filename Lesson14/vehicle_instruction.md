@@ -27,6 +27,8 @@ If the Car is in reverse gear, the accelerate method should cause the Car to get
 
 The Car’s **brake** method should always move the speed of the Car closer to zero.
 
+### Boat class
+
 ### Submission
 Create a new file in Lesson14 folder called vehicles.py
 Make sure to commit your code and push it to Github!
