@@ -3,7 +3,7 @@
 ### Create a message_instructions.md file, containing the following info:
 
 * Create the following classes: **Message, Email, TextMessage and Letter**
-* The classes, **Email, TextMessage and Letter** should all inherit from the Message parent class.
+* The classes, **Email, TextMessage and Letter** should all inherit from the **Message parent class**.
 * The *Message class* should have a variable called **content** that holds the contents of the message.
 There should also be **read and write** methods that get and set the value of content.
 * The *Message class* should also have a method called **send** that prints ***“Message sent”***.
