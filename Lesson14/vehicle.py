@@ -1,59 +1,105 @@
-import self as self
-
-
 class Vehicle:
-    def __init__(self, speed):
-        self.speed = speed
+    def __init__(self, top_speed):
+        self.top_speed = top_speed
+        self.speed = 0
 
     def accelerate(self, speed_acc):
         self.speed += speed_acc
+        if self.speed > self.top_speed:
+            self.speed = self.top_speed
+            print("Going at max speed!")
 
     def brake(self, speed_rit):
         self.speed -= speed_rit
+        if self.speed < 0:
+            self.speed = 0
+            print("We have come to a halt")
 
     def get_current_speed(self):
         return self.speed
 
 
 class Airplane(Vehicle):
-    def __init__(self, speed):
-        super().__init__(speed)
-
-
-
-class Car(Vehicle):
-    def __init__(self, speed):
-        super().__init__(speed)
-        self.reverse_gear = False
+    def __init__(self, top_speed):
+        super().__init__(top_speed)
+        self.is_flying = False
 
     def accelerate(self, speed_acc):
-        super(Vehicle, self).accelerate(speed_acc)
+        super().accelerate(speed_acc)
 
     def brake(self, speed_rit):
-        if self.speed = 0
-            print("The car is already stopped")
+        super().brake(speed_rit)
+
+    def get_flying_status(self):
+        if self.speed > 250:
+            self.is_flying = True
         else:
-            super(Vehicle, self).brake(speed_rit)
+            self.is_flying = False
+        return self.is_flying
 
     def get_current_speed(self):
         return self.speed
 
+
+class Car(Vehicle):
+    def __init__(self, top_speed):
+        super().__init__(top_speed)
+        self.reverse_gear = False
+
+    def accelerate(self, speed_acc):
+        if self.speed > self.top_speed:
+            self.speed = self.top_speed
+            print("Going at max speed!")
+        elif self.reverse_gear:
+            if speed_acc > 0:
+                super(Car, self).accelerate(-speed_acc)
+            else:
+                super(Car, self).accelerate(speed_acc)
+        else:
+            if speed_acc < 0:
+                super(Car, self).accelerate(-speed_acc)
+            else:
+                super(Car, self).accelerate(speed_acc)
+
+    def brake(self, speed_rit):
+        if self.speed == 0:
+            print("The car is already stopped")
+        elif self.reversed:
+            if speed_rit > 0:
+                super(Car, self).brake(-speed_rit)
+            else:
+                super(Car, self).brake(speed_rit)
+        else:
+            if speed_rit < 0:
+                super(Car, self).brake(-speed_rit)
+            else:
+                super(Car, self).brake(speed_rit)
+
     def enter_reverse_gear(self):
         if self.speed == 0:
-            if self.reverse_gear == False:
-                self.reverse_gear = True
-            else:
-                self.reverse_gear = False
+            self.reverse_gear = not self.reverse_gear
         else:
             print("The gear can only be reversed if the speed is 0.")
 
+    def get_current_speed(self):
+        return self.speed
 
 
+"""Main Methods"""
+airplane = Airplane(1200)
+car = Car(240)
 
+airplane.accelerate(200)
+print(airplane.get_flying_status())
+print(airplane.get_current_speed())
+airplane.accelerate(60)
+print(airplane.get_flying_status())
 
-
-
-
+car.accelerate(50)
+car.enter_reverse_gear()
+car.accelerate(200)
+print(car.speed)
+print(car.get_current_speed())
 
 
 
