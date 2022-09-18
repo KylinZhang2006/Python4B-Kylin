@@ -100,8 +100,3 @@ car.enter_reverse_gear()
 car.accelerate(200)
 print(car.speed)
 print(car.get_current_speed())
-
-
-
-
-
