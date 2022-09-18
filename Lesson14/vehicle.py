@@ -85,6 +85,31 @@ class Car(Vehicle):
         return self.speed
 
 
+class Boat(Vehicle):
+    def __init__(self, top_speed, max_passenger):
+        self.max_passenger = max_passenger
+        self.passenger_num = 0
+        super().__init__(top_speed)
+
+    def set_passenger_num(self, passenger_num):
+        self.passenger_num = passenger_num
+
+    def accelerate(self, speed_acc):
+        self.speed += speed_acc - self.passenger_num
+        if self.speed > self.top_speed:
+            self.speed = self.top_speed
+            print("Going at max speed!")
+        elif self.speed < 0:
+            self.speed = 0
+            print("The boat is stopped by passenger's weight. Accelerate more!")
+
+    def brake(self, speed_rit):
+        self.speed -= speed_rit + self.passenger_num
+        if self.speed < 0:
+            self.speed = 0
+            print("We have come to a halt")
+
+
 """Main Methods"""
 airplane = Airplane(1200)
 car = Car(240)
@@ -100,3 +125,11 @@ car.enter_reverse_gear()
 car.accelerate(200)
 print(car.speed)
 print(car.get_current_speed())
+
+boat = Boat(70, 30)
+boat.set_passenger_num(20)
+boat.accelerate(30)
+boat.accelerate(90)
+print(boat.get_current_speed())
+boat.brake(60)
+print(boat.get_current_speed())
