@@ -25,7 +25,7 @@ def find_largets_sum_2(lst):
 
 
 # magic
-print(max(lst, key=sum))
+#print(max(lst, key=sum))
 
 
 def find_second_largest_num(lst):
@@ -42,12 +42,15 @@ def find_second_largest_num(lst):
 print(find_second_largest_num(lst))
 
 
+# magic
+def second_num(t):
+    return t[1]
 
-"""print(find_largest_sum(lst))
-print(find_second_largest_num(lst))"""
+
+print(max(lst, key=second_num))
 
 
-"""letters_to_numbers = {
+letters_to_numbers = {
     "a": 0,
     "b": 1,
     "c": 2,
@@ -56,6 +59,8 @@ print(find_second_largest_num(lst))"""
 }
 
 
+# letter_to_number("afdegh") => 0f34gh
+
 def letter_to_number(phrase):
     new_phrase = ""
     for char in phrase:
@@ -63,5 +68,6 @@ def letter_to_number(phrase):
     return new_phrase
 
 phrase = ""
-"""
+
+
 
