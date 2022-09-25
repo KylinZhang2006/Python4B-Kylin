@@ -7,28 +7,44 @@ average_heights_and_weights = {
 
 
 def get_avg_weight(country):
-    return average_heights_and_weights[country][0]
+    if country in average_heights_and_weights:
+        return average_heights_and_weights[country][1]
+    else:
+        print("The country is not in our dictionary!")
 
 
 def get_avg_avg_weight():
     total_weight = 0
     for heights_and_weights in average_heights_and_weights.values():
-        total_weight += int(heights_and_weights[0])
-    average_weight = total_weight // len(average_heights_and_weights.values())
-    return average_weight
+        total_weight += heights_and_weights[1]
+    if len(average_heights_and_weights) != 0:
+        return total_weight / len(average_heights_and_weights)
+    return 0
 
 
 def add_new_country():
     country_name = input("Please enter the country name: ")
-    average_weight = input("Please enter the average weight of the country: ")
+    if country_name in average_heights_and_weights:
+        print("The country is already in the dictionary!")
+        return
     average_height = input("Please enter the average height of the country: ")
-    average_heights_and_weights[country_name] = (average_weight, average_height)
+    average_weight = input("Please enter the average weight of the country: ")
+    if average_height.isdecimal() and average_weight.isdecimal():
+        average_heights_and_weights[country_name] = (int(average_height), int(average_weight))
+    else:
+        print("Invalid input!")
 
 
 def update_country_stats(country):
-    new_average_weight = input("Please enter the new average weight of the country: ")
-    new_average_height = input("Please enter the new average height of the country")
-    average_heights_and_weights[country] = (new_average_weight, new_average_height)
+    if country in average_heights_and_weights:
+        new_average_height = input("Please enter the new average height of the country: ")
+        new_average_weight = input("Please enter the new average weight of the country: ")
+        if average_height.isdecimal() and average_weight.isdecimal():
+            average_heights_and_weights[country] = (int(new_average_height), int(new_average_weight))
+        else:
+            print("Invalid input!")
+    else:
+        print("The country is not in the dictionary!")
 
 
 print("Average weight of all countries: ")
