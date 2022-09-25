@@ -29,13 +29,18 @@ print(max(lst, key=sum))
 
 
 def find_second_largest_num(lst):
-    second_num_list = []
-    for t in lst:
-        if t[0] >= t[1]:
-            second_num_list.append(t[0])
-        elif t[0] < t[1]:
-            second_num_list.append(t[1])
-    return max(second_num_list)
+    if len(lst) == 0:
+        return -1, -1
+    max_second_num = lst[0][1]
+    max_index = 0
+    for i in range(len(lst)):
+        if lst[i][1] >= max_second_num:
+            max_second_num = lst[i][1]
+            max_index = i
+    return lst[max_index]
+
+print(find_second_largest_num(lst))
+
 
 
 """print(find_largest_sum(lst))
