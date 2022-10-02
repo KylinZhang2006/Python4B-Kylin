@@ -100,11 +100,7 @@ passage2 = "It was unfortunate to hear that Alpha had Pneumonoultramicroscopicsi
 
 def longest_word(passage):
     splitted_passage = passage.split(" ")
-    longest_word = ""
-    for word in splitted_passage:
-        if len(word) > len(longest_word):
-            longest_word = word
-    return word
+    return max(splitted_passage, key=len)
 
 
 print(longest_word(passage))
