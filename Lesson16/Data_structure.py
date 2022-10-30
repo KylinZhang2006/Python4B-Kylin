@@ -106,7 +106,7 @@ def longest_word(passage):
 print(longest_word(passage))
 print(longest_word(passage2))
 
-
+melbourne_data[(melbourne_data["Distance"]<3) & (melbourne_data["YearBuilt"]<=2014) & ((melbourne_data["Bathroom"] == 2) & (melbourne_data.Price<=700000) | (melbourne_data["Bathroom"] == 1) & (melbourne_data.Price<=500000))]
 
 
 
