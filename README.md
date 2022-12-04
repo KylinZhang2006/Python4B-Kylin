@@ -8,5 +8,7 @@ This repository holds all the lecture code.
 [2019 Questions](https://www.cemc.uwaterloo.ca/contests/computing/past_ccc_contests/2019/stage%201/juniorEF.pdf)
 
 lesson21 2019-J3, 2019-J4
+
 lesson22 2019-J1, 2019-J2
+
 lesson23 2020-J1, 2020-J2, 2020-J5, recursion
